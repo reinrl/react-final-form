@@ -203,7 +203,8 @@ function useField<FormValues: FormValuesShape>(
           value = defaultFormat(value, name)
         }
       } else {
-        value = format(value, name)
+        value = format(value, name)        
+        state.change(value)
       }
       if (value === null && !allowNull) {
         value = ''
